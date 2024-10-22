@@ -49,6 +49,11 @@ jobs:
           service_account_key: ${{ secrets.GCP_SERVICE_ACCOUNT_KEY }}
           project_id: ${{ secrets.GCP_PROJECT_ID }}
 
+      - name: Install Docker Compose
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y docker-compose  
+
       - name: Authenticate Docker to Google Container Registry
         run: |
           gcloud auth configure-docker
