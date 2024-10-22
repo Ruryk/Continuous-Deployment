@@ -1,0 +1,15 @@
+GET /localhost:9200/autocomplete/_search
+
+{
+  "suggest": {
+    "suggestion": {
+      "prefix": "your word",
+      "completion": {
+        "field": "suggest",
+        "fuzzy": {
+          "fuzziness": 2
+        }
+      }
+    }
+  }
+}

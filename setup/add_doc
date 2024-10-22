@@ -1,0 +1,7 @@
+POST /localhost:9200/autocomplete/_doc/1
+
+{
+  "suggest": {
+    "input": ["example", "exemplar", "examine"]
+  }
+}
