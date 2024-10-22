@@ -8,9 +8,23 @@ services:
     ports:
       - "9200:9200"
       - "9300:9300"
+    volumes:
+      - es_data:/usr/share/elasticsearch/data
 
   node:
     build: .
     container_name: node-container
     depends_on:
       - elasticsearch
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app
+    working_dir: /app
+    environment:
+      - NODE_ENV=development
+    command: npm start
+
+volumes:
+  es_data:
+    driver: local
