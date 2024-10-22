@@ -1,17 +1,20 @@
-# Вибір базового образу Node.js
+# Selecting the base Node.js image
 FROM node:18
 
-# Створення робочої директорії
+# Create a working directory
 WORKDIR /usr/src/app
 
-# Копіювання package.json та package-lock.json
+# Copying package.json and package-lock.json
 COPY package*.json ./
 
-# Встановлення залежностей
+# Setting dependencies
 RUN npm install
 
-# Копіювання всіх файлів проекту
+# Copy all project files
 COPY . .
 
-# Команда для запуску скрипту
-CMD ["node", "import.js"]
+# Open the port for access
+EXPOSE 3000
+
+# Command to run the script
+CMD ["npm", "start"]
