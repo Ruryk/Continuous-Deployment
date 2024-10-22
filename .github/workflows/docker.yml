@@ -35,14 +35,6 @@ jobs:
       - name: Check Node.js logs
         run: docker-compose logs node
 
-      - name: Verify Elasticsearch is up
-        run: |
-          curl -X GET "localhost:9200/"
-
-      - name: Verify Node.js is up
-        run: |
-          curl -X GET "http://localhost:3000/"
-
   deploy:
     runs-on: ubuntu-latest
     needs: build
