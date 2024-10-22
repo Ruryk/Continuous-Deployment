@@ -62,7 +62,7 @@ jobs:
         run: |
           docker-compose build --no-cache
           docker tag elasticsearch:7.17.3 gcr.io/${{ secrets.GCP_PROJECT_ID }}/elasticsearch:latest
-          docker tag node-container gcr.io/${{ secrets.GCP_PROJECT_ID }}/node:latest
+          docker tag hsa1225continuousdeployment-node gcr.io/${{ secrets.GCP_PROJECT_ID }}/node:latest
           docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/elasticsearch:latest
           docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/node:latest
 
