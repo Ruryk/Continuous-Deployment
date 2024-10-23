@@ -42,10 +42,8 @@ jobs:
           docker-compose build
           docker images
           docker tag continuous-deployment_elasticsearch ruryk/elasticsearch:v1.0.2
-#          docker tag continuous-deployment_node ruryk/hsacicd:v1.0.2
           docker images
           docker push ruryk/elasticsearch:v1.0.2
-#          docker push ruryk/hsacicd:v1.0.2
 
       - name: Deploy Elasticsearch to Google Cloud Run
         run: |
@@ -55,12 +53,3 @@ jobs:
             --region ${{ secrets.GCP_REGION }} \
             --allow-unauthenticated \
             --memory 2Gi
-
-#      - name: Deploy Node.js to Google Cloud Run
-#        run: |
-#          gcloud run deploy node-service \
-#            --image ruryk/hsacicd:v1.0.2 \
-#            --platform managed \
-#            --region ${{ secrets.GCP_REGION }} \
-#            --allow-unauthenticated \
-#            --memory 1Gi
