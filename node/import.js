@@ -1,3 +1,4 @@
+const express = require('express');
 const fs = require('fs');
 const { Client } = require('@elastic/elasticsearch');
 const readline = require('readline');
@@ -57,10 +58,7 @@ async function createIndex() {
     console.log('Elasticsearch is configured!');
 }
 
-async function run() {
-    await checkElasticsearch();
-    await createIndex();
-
+async function importData() {
     const fileStream = fs.createReadStream('words_alpha.txt');
     const rl = readline.createInterface({
         input: fileStream,
@@ -84,4 +82,24 @@ async function run() {
     console.log('Data import completed.');
 }
 
-run().catch(console.error);
+async function initializeElasticsearch() {
+    try {
+        await checkElasticsearch();
+        await createIndex();
+        await importData();
+    } catch (error) {
+        console.error('Error initializing Elasticsearch:', error);
+    }
+}
+
+const app = express();
+
+app.get('/', (req, res) => {
+    res.send('<h1>Hello, World!</h1>');
+});
+
+const port = process.env.PORT || 8080;
+app.listen(port, async () => {
+    console.log(`Server is running on port ${port}`);
+    await initializeElasticsearch();  // Виконуємо налаштування Elasticsearch при старті сервера
+});
