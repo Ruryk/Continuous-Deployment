@@ -5,9 +5,9 @@ services:
     container_name: es-container
     environment:
       - discovery.type=single-node
+      - http.port=8080
     ports:
-      - "9200:9200"
-      - "9300:9300"
+      - "8080:8080"
     volumes:
       - es_data:/usr/share/elasticsearch/data
 

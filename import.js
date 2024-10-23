@@ -2,7 +2,7 @@ const fs = require('fs');
 const { Client } = require('@elastic/elasticsearch');
 const readline = require('readline');
 
-const client = new Client({ node: 'http://elasticsearch:9200' });
+const client = new Client({ node: 'http://elasticsearch:8080' });
 
 async function checkElasticsearch(maxRetries = 12, delay = 5000) {
     let retries = 0;
