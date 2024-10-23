@@ -58,18 +58,19 @@ jobs:
           docker push ruryk/elasticsearch:v1.0.1
           docker push ruryk/hsacicd:v1.0.1
 
-      - name: Deploy Elasticsearch to Google Cloud Run
-        run: |
-          gcloud run deploy elasticsearch-service \
-            --image ruryk/elasticsearch:v1.0.1 \
-            --platform managed \
-            --region ${{ secrets.GCP_REGION }} \
-            --allow-unauthenticated
-
       - name: Deploy Node.js to Google Cloud Run
         run: |
           gcloud run deploy node-service \
             --image ruryk/hsacicd:v1.0.1 \
             --platform managed \
+            --region ${{ secrets.GCP_REGION }} \
+            --allow-unauthenticated
+
+      - name: Deploy Elasticsearch to Google Cloud Run
+        run: |
+          gcloud run deploy elasticsearch-service \
+            --image ruryk/elasticsearch:v1.0.1 \
+            --platform managed \
+            --port=9200
             --region ${{ secrets.GCP_REGION }} \
             --allow-unauthenticated
