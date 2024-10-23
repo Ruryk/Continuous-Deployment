@@ -52,14 +52,16 @@ jobs:
         run: |
           docker-compose build
           docker images
+          docker tag elasticsearch ruryk/elasticsearch:v1.0.0
           docker tag continuous-deployment_node ruryk/hsacicd:v1.0.0
           docker images
+          docker push ruryk/elasticsearch:v1.0.0
           docker push ruryk/hsacicd:v1.0.0
 
       - name: Deploy Elasticsearch to Google Cloud Run
         run: |
           gcloud run deploy elasticsearch-service \
-            --image elasticsearch:7.17.3 \
+            --image ruryk/elasticsearch:v1.0.0 \
             --platform managed \
             --region ${{ secrets.GCP_REGION }} \
             --allow-unauthenticated
