@@ -1,9 +1,9 @@
 {
   "name": "hsa12-11.-nosql-databases-elasticsearch",
   "version": "1.0.0",
-  "main": "import.js",
+  "main": "../import.js",
   "scripts": {
-    "start": "node import.js"
+    "start": " import.js"
   },
   "keywords": [],
   "author": "",
