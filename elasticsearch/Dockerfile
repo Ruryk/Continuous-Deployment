@@ -14,4 +14,4 @@ RUN chmod +x /usr/share/elasticsearch/import_data.sh
 RUN chmod +x /usr/share/elasticsearch/initialize_elasticsearch.sh
 
 # Command to start Elasticsearch and execute the initialization script
-CMD [ "sh", "-c", "/usr/local/bin/docker-entrypoint.sh & /usr/share/elasticsearch/initialize_elasticsearch.sh" ]
+CMD [ "sh", "-c", "/usr/share/elasticsearch/initialize_elasticsearch.sh" ]

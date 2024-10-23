@@ -10,19 +10,6 @@ services:
     volumes:
       - es_data:/usr/share/elasticsearch/data
 
-#  node:
-#    build:
-#      context: ./node
-#      dockerfile: Dockerfile
-#    container_name: node-container
-#    ports:
-#      - "8080:8080"
-#    volumes:
-#      - .:/app
-#    environment:
-#      - NODE_ENV=development
-#    command: npm start
-
 volumes:
   es_data:
     driver: local

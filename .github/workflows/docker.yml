@@ -1,4 +1,4 @@
-name: Build and Deploy Elasticsearch and Node.js Project
+name: Build and Deploy Elasticsearch Project
 
 on:
   push:

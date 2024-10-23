@@ -2,6 +2,18 @@ POST /localhost:9200/autocomplete/_doc/1
 
 {
   "suggest": {
-    "input": ["example", "exemplar", "examine"]
+    "input": [
+               "API", "Application", "Array", "Artificial Intelligence", "Backend", "Bandwidth", "Binary",
+               "Blockchain", "Bug", "Byte", "Cache", "Cloud", "Code", "Compiler", "Compression", "CPU",
+               "Cybersecurity", "Data", "Database", "Debug", "Deployment", "DevOps", "DNS", "Encryption",
+               "Endpoint", "Firewall", "Framework", "Frontend", "Function", "Git", "GPU", "Hash", "HTML",
+               "HTTP", "HTTPS", "Index", "IoT", "IP", "Java", "JavaScript", "JSON", "Kernel", "Kubernetes",
+               "Latency", "Library", "Load Balancer", "Machine Learning", "Memory", "Microservice", "Middleware",
+               "Network", "Node", "Object", "Open Source", "Packet", "Patch", "Protocol", "Proxy", "Python",
+               "Query", "Queue", "RAM", "Repository", "REST", "Router", "Runtime", "SaaS", "Scalability", "Script",
+               "SDK", "Server", "Shell", "Software", "SQL", "Stack", "Storage", "Subnet", "Syntax", "TCP", "Thread",
+               "Token", "UI", "URL", "User", "UX", "Variable", "Virtualization", "VLAN", "VPN", "Web", "WebSocket",
+               "Widget", "Workflow", "XML", "YAML", "Zero-Day", "Zip", "Zone", "Zsh"
+             ]
   }
 }
