@@ -6,6 +6,7 @@ WORKDIR /usr/src/app
 
 # Copying package.json and package-lock.json
 COPY package*.json ./
+COPY words_alpha.txt ./
 
 # Setting dependencies
 RUN npm install
@@ -14,7 +15,7 @@ RUN npm install
 COPY .. .
 
 # Open the port for access
-EXPOSE 3000
+EXPOSE 8080
 
 # Command to run the script
 CMD ["npm", "start"]

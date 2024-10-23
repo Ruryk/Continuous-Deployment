@@ -64,7 +64,7 @@ jobs:
             --image ruryk/elasticsearch:v1.0.1 \
             --platform managed \
             --region ${{ secrets.GCP_REGION }} \
-            --port=9200 \
+            --port=8080 \
             --allow-unauthenticated
 
       - name: Deploy Node.js to Google Cloud Run
@@ -73,5 +73,5 @@ jobs:
             --image ruryk/hsacicd:v1.0.1 \
             --platform managed \
             --region ${{ secrets.GCP_REGION }} \
-            --port=3000 \
+            --port=8080 \
             --allow-unauthenticated
