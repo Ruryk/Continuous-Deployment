@@ -3,7 +3,9 @@ const fs = require('fs');
 const { Client } = require('@elastic/elasticsearch');
 const readline = require('readline');
 
-const client = new Client({ node: 'elasticsearch-service:8080' });
+const port = process.env.PORT || 8080;
+
+const client = new Client({ node: `elasticsearch-service:${ port }` });
 
 async function checkElasticsearch(maxRetries = 12, delay = 5000) {
     let retries = 0;
@@ -98,8 +100,7 @@ app.get('/', (req, res) => {
     res.send('<h1>Hello, World!</h1>');
 });
 
-const port = process.env.PORT || 8080;
-app.listen(port, async () => {
+app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
-    await initializeElasticsearch();  // Виконуємо налаштування Elasticsearch при старті сервера
+    initializeElasticsearch();
 });
