@@ -37,9 +37,9 @@ jobs:
         run: |
           docker-compose build
           docker images
-          docker tag continuous-deployment_node gcr.io/${{ secrets.GCP_PROJECT_ID }}/node-container:v1.0.0
+          docker tag continuous-deployment_node gcr.io/${{ secrets.GCP_PROJECT_ID }}/hsacicd/node-container:v1.0.0
           docker images
-          docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/node-container:v1.0.0
+          docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/hsacicd/node-container:v1.0.0
 
       - name: Deploy Elasticsearch to Google Cloud Run
         run: |
@@ -52,7 +52,7 @@ jobs:
       - name: Deploy Node.js to Google Cloud Run
         run: |
           gcloud run deploy node-service \
-            --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/node-container:v1.0.0 \
+            --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/hsacicd/node-container:v1.0.0 \
             --platform managed \
             --region ${{ secrets.GCP_REGION }} \
             --allow-unauthenticated
