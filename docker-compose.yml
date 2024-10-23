@@ -5,6 +5,8 @@ services:
       context: ./elasticsearch
       dockerfile: Dockerfile
     container_name: es-container
+    ports:
+      - "8080:8080"
     volumes:
       - es_data:/usr/share/elasticsearch/data
 
