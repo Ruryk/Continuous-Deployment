@@ -1,19 +1,115 @@
-POST /localhost:9200/autocomplete/_doc/1
-
-{
-  "suggest": {
-    "input": [
-               "API", "Application", "Array", "Artificial Intelligence", "Backend", "Bandwidth", "Binary",
-               "Blockchain", "Bug", "Byte", "Cache", "Cloud", "Code", "Compiler", "Compression", "CPU",
-               "Cybersecurity", "Data", "Database", "Debug", "Deployment", "DevOps", "DNS", "Encryption",
-               "Endpoint", "Firewall", "Framework", "Frontend", "Function", "Git", "GPU", "Hash", "HTML",
-               "HTTP", "HTTPS", "Index", "IoT", "IP", "Java", "JavaScript", "JSON", "Kernel", "Kubernetes",
-               "Latency", "Library", "Load Balancer", "Machine Learning", "Memory", "Microservice", "Middleware",
-               "Network", "Node", "Object", "Open Source", "Packet", "Patch", "Protocol", "Proxy", "Python",
-               "Query", "Queue", "RAM", "Repository", "REST", "Router", "Runtime", "SaaS", "Scalability", "Script",
-               "SDK", "Server", "Shell", "Software", "SQL", "Stack", "Storage", "Subnet", "Syntax", "TCP", "Thread",
-               "Token", "UI", "URL", "User", "UX", "Variable", "Virtualization", "VLAN", "VPN", "Web", "WebSocket",
-               "Widget", "Workflow", "XML", "YAML", "Zero-Day", "Zip", "Zone", "Zsh"
-             ]
-  }
-}
+curl -X POST "{APP_URL}/_bulk" \
+-H "Content-Type: application/json" \
+-d '
+{ "index" : { "_index" : "autocomplete", "_id" : "1" } }
+{ "suggest": { "input": ["API"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "2" } }
+{ "suggest": { "input": ["Application"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "3" } }
+{ "suggest": { "input": ["Array"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "4" } }
+{ "suggest": { "input": ["Artificial Intelligence"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "5" } }
+{ "suggest": { "input": ["Backend"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "6" } }
+{ "suggest": { "input": ["Bandwidth"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "7" } }
+{ "suggest": { "input": ["Binary"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "8" } }
+{ "suggest": { "input": ["Blockchain"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "9" } }
+{ "suggest": { "input": ["Bug"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "10" } }
+{ "suggest": { "input": ["Byte"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "11" } }
+{ "suggest": { "input": ["Cache"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "12" } }
+{ "suggest": { "input": ["Cloud"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "13" } }
+{ "suggest": { "input": ["Code"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "14" } }
+{ "suggest": { "input": ["Compiler"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "15" } }
+{ "suggest": { "input": ["Compression"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "16" } }
+{ "suggest": { "input": ["CPU"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "17" } }
+{ "suggest": { "input": ["Cybersecurity"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "18" } }
+{ "suggest": { "input": ["Data"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "19" } }
+{ "suggest": { "input": ["Database"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "20" } }
+{ "suggest": { "input": ["Debug"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "21" } }
+{ "suggest": { "input": ["Deployment"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "22" } }
+{ "suggest": { "input": ["DevOps"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "23" } }
+{ "suggest": { "input": ["DNS"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "24" } }
+{ "suggest": { "input": ["Encryption"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "25" } }
+{ "suggest": { "input": ["Endpoint"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "26" } }
+{ "suggest": { "input": ["Firewall"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "27" } }
+{ "suggest": { "input": ["Framework"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "28" } }
+{ "suggest": { "input": ["Frontend"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "29" } }
+{ "suggest": { "input": ["Function"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "30" } }
+{ "suggest": { "input": ["Git"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "31" } }
+{ "suggest": { "input": ["GPU"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "32" } }
+{ "suggest": { "input": ["Hash"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "33" } }
+{ "suggest": { "input": ["HTML"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "34" } }
+{ "suggest": { "input": ["HTTP"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "35" } }
+{ "suggest": { "input": ["HTTPS"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "36" } }
+{ "suggest": { "input": ["Index"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "37" } }
+{ "suggest": { "input": ["IoT"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "38" } }
+{ "suggest": { "input": ["IP"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "39" } }
+{ "suggest": { "input": ["Java"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "40" } }
+{ "suggest": { "input": ["JavaScript"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "41" } }
+{ "suggest": { "input": ["JSON"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "42" } }
+{ "suggest": { "input": ["Kernel"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "43" } }
+{ "suggest": { "input": ["Kubernetes"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "44" } }
+{ "suggest": { "input": ["Latency"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "45" } }
+{ "suggest": { "input": ["Library"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "46" } }
+{ "suggest": { "input": ["Load Balancer"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "47" } }
+{ "suggest": { "input": ["Machine Learning"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "48" } }
+{ "suggest": { "input": ["Memory"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "49" } }
+{ "suggest": { "input": ["Microservice"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "50" } }
+{ "suggest": { "input": ["Middleware"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "51" } }
+{ "suggest": { "input": ["Network"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "52" } }
+{ "suggest": { "input": ["Node"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "53" } }
+{ "suggest": { "input": ["Object"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "54" } }
+{ "suggest": { "input": ["Open Source"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "55" } }
+{ "suggest": { "input": ["Packet"] } }
+{ "index" : { "_index" : "autocomplete", "_id" : "56" } }
+{ "suggest": { "input": ["Patch"] } }

@@ -1,5 +1,6 @@
-PUT /localhost:9200/autocomplete
-
+curl -X PUT "{APP_URL}/autocomplete" \
+-H "Content-Type: application/json" \
+-d '
 {
   "settings": {
     "analysis": {
@@ -31,4 +32,4 @@ PUT /localhost:9200/autocomplete
       }
     }
   }
-}
+}'

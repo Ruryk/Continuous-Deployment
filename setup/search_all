@@ -1,7 +1,8 @@
-POST /localhost:9200/autocomplete/_search
-
+curl -X POST "{APP_URL}/autocomplete/_search" \
+-H "Content-Type: application/json" \
+-d '
 {
   "query": {
     "match_all": {}
   }
-}
+}'
