@@ -1,11 +1,12 @@
 version: '3'
 services:
   elasticsearch:
-    image: elasticsearch:7.17.3
+    build:
+      context: ./elasticsearch
+      dockerfile: Dockerfile
     container_name: es-container
     environment:
       - discovery.type=single-node
-      - http.port=8080
     ports:
       - "8080:8080"
     volumes:
@@ -13,11 +14,9 @@ services:
 
   node:
     build:
-      context: .
+      context: ./node
       dockerfile: Dockerfile
     container_name: node-container
-    depends_on:
-      - elasticsearch
     ports:
       - "3000:3000"
     volumes:
