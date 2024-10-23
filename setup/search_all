@@ -1,4 +1,4 @@
-GET /localhost:9200/autocomplete/_search
+POST /localhost:9200/autocomplete/_search
 
 {
   "query": {
