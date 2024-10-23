@@ -61,15 +61,13 @@ jobs:
       - name: Build and push Docker image
         run: |
           docker-compose build --no-cache
-          docker tag elasticsearch:7.17.3 gcr.io/${{ secrets.GCP_PROJECT_ID }}/elasticsearch:latest
-          docker tag hsa1225continuousdeployment-node gcr.io/${{ secrets.GCP_PROJECT_ID }}/node:latest
-          docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/elasticsearch:latest
+          docker tag node-container gcr.io/${{ secrets.GCP_PROJECT_ID }}/node:latest
           docker push gcr.io/${{ secrets.GCP_PROJECT_ID }}/node:latest
 
       - name: Deploy Elasticsearch to Google Cloud Run
         run: |
           gcloud run deploy elasticsearch-service \
-            --image gcr.io/${{ secrets.GCP_PROJECT_ID }}/elasticsearch:latest \
+            --image elasticsearch:7.17.3 \
             --platform managed \
             --region ${{ secrets.GCP_REGION }} \
             --allow-unauthenticated
